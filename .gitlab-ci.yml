@@ -1,0 +1,15 @@
+package:
+  stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
+
+  before_script:
+    - git submodule init
+    - git submodule update --force
+  script:
+  - ls
+  artifacts:
+    paths:
+    - '**/*'
+    exclude:
+    - '**/.git'
